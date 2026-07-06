@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
 </head>
+
+    <%- include('./partials/nav') %>
+
 <body>
 
   <h1> <%= rest.name %>
@@ -14,16 +17,7 @@
 
   <p> <%= rest.phone %> </p>
 
-  <% if (rest.isOpen){ %>
-
-    <p>Yes we are open!🌮</p>
-
-  <%} else %>
-
-  <% { %>
-
-    <p>Sorry, we are closed.😭</p>
-  <%} %>
+  
 
 
 </body>

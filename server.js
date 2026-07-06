@@ -67,11 +67,35 @@ app.get('/', function(req, res){
 
     },
 
-    
-    
     )
 
-    
+})
+
+
+app.get('/menu', function(req, res){
+
+
+    res.render('menu.ejs', {
+
+        menu: RESTAURANT.menu,
+    })
+})
+
+app.get('/menu/:category', function(req, res){
+
+    const category = req.params.category
+
+    const menuItems = RESTAURANT.menu.filter (
+
+        (item) => item.category === category
+    )
+
+    const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
+
+    res.render("category", {
+    menuItems,
+    category: categoryName,
+  });
 
 
 })
