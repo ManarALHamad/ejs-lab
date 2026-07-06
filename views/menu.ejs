@@ -6,23 +6,16 @@
   <title>Menu</title>
 </head>
 
-<nav>
- <a href="/">Home</a>
-  <a href="/menu">Full Menu</a>
-  <a href="/menu/mains">Mains</a>
-  <a href="/menu/desserts">Desserts</a>
-  <a href="/menu/sides">Sides</a>
-
-</nav>
+<%- include("./partials/nav") %>
 
 <body>
   <h1>Full Menu</h1>
 
-  <h2>Mains</h2>
+  
 
     <% menu.forEach(function(item){ %>
 
-       <% if(item.category === "mains"){ %>
+       <% if(menu){ %>
 
         <h3> <%= item.name %></h3>
 
@@ -32,12 +25,11 @@
 
         <p>  <%= item.details %> </p>
         <%} %>
-       
-
-
+    
 
    <% }) %>
 
+   
 
 </body>
 </html>

@@ -92,7 +92,7 @@ app.get('/menu/:category', function(req, res){
 
     const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
 
-    res.render("category", {
+    res.render("category.ejs", {
     menuItems,
     category: categoryName,
   });
